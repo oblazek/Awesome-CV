@@ -20,11 +20,10 @@
 You can see my example here: [PDF](https://github.com/oblazek/Awesome-CV/blob/master/examples/cv.pdf)
 
 This is the original one, made by posquit0
-![Résumé(Page 1)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume-0.png)
-
-
+=======
 ![Résumé header with photo ID (circle)](https://raw.githubusercontent.com/nitrogl/Awesome-CV/master/examples/resume-photoid-circle-0.png)
 ![Résumé header with photo ID (rectangle)](https://raw.githubusercontent.com/nitrogl/Awesome-CV/master/examples/resume-photoid-rect-0.png)
+
 #### Cover Letter
 
 You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)
