@@ -81,7 +81,7 @@
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
-\RequirePackage[hidelinks,unicode]{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 \hypersetup{%
   pdftitle={},
   pdfauthor={},
@@ -610,15 +610,16 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.0cm} R{2.5cm}} %C{\textwidth} 
 }{%
     \end{tabular*}
-  \end{center}
+    \end{center}
 }
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
-\newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+\newcommand*{\cvhonor}[1]{%
+  %\honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+    \honortitlestyle{#1}
 }
 
 % Define an environment for cvskill
