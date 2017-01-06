@@ -21,7 +21,7 @@
 \documentclass[11pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=1.2cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -29,7 +29,7 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-concrete}
+\colorlet{awesome}{awesome-skyblue}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
 
@@ -41,7 +41,7 @@
 % \definecolor{lighttext}{HTML}{999999}
 
 % Set false if you don't want to highlight section with awesome color
-%\setbool{acvSectionColorHighlight}{false}
+\setbool{acvSectionColorHighlight}{true}
 
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
@@ -51,22 +51,26 @@
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
-\photo[rectangle, left]{/home/blazeond/Documents/Dropbox/PetraOnco.JPG}
-\name{Bc. Petra}{Ončová}
-%\position{IT Technik{\enskip\cdotp\enskip}Web Junior Developer}
-\address{Botanická 47/47, Brno, 602 00}
-%{Budovatelů 811/28, Havířov 4, 735 64}
+\vspace{1cm}
+\name{Bc. Ondřej}{Blažek}
+\position{Junior SW Developer{\enskip\cdotp\enskip}Web Junior Developer}
+%\address{Budovatelů 811/28, Havířov 4, 735 64}
+\address{Višnová 644, Říčany 664 82}
 
-\mobile{(+420) 777 996 588} 
-\email{petra.oncova@seznam.cz}
+%\mobile{(+420) 777 996 588} 
+\mobile{(+420) 777 041 992} 
+%\email{petra.oncova@seznam.cz}
+\email{ondra.blazkuj@gmail.com}
 % \homepage{}
-%\github{oblazek}
-\birth{6.5.1991}
+\github{oblazek}
+%\birth{6.5.1991}
+\birth{21.4.1992}
+\linkedin{Ondrej Blazek}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
 % \skype{skype-id}
 % \reddit{reddit-id}
-% \extrainfo{Řidičský průkaz Sk. B}
+% \extrainfo{z Sk. B}
 
 %\quote{``Must be the change that you want to see in the world."}
 
@@ -75,29 +79,31 @@
 \begin{document}
 
 % Print the header with above personal informations
-\makecvheader[L]
+\makecvheader
 
-  %\begin{center}
-  %\includegraphics[scale=0.5]{OndrejBlazek.jpg} 
+  \begin{center}
+  \includegraphics[scale=0.5]{OndrejBlazek.jpg} 
   %\includegraphics[scale=0.02]{PetraOnco.JPG} 
-  %\end{center}
+  \end{center}
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Petra Ončová~~~·~~~Curriculum Vitae}
-  {\thepage}
+  {Ondřej Blažek~~~·~~~Curriculum Vitae}
+  %{*Dle CEFR.}
+  {*According to CEFR.}
+  %{\thepage}
 
 
-%-------------------------------------------------------------------------------
+%----------------------Type name of new folder---------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 \input{cv/education.tex}
 \input{cv/skills.tex}
-\input{cv/skill.tex}
+%\input{cv/skill.tex}
 \input{cv/experience.tex}
-%\input{cv/honors.tex}
+\input{cv/honors.tex}
 %\input{cv/extracurricular.tex}
 %\input{cv/presentation.tex}
 %\input{cv/writing.tex}
