@@ -156,7 +156,6 @@
   \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
 }
 
-
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
@@ -182,6 +181,13 @@
 \newcommand*{\footerfont}{\sourcesanspro}
 \newcommand*{\bodyfont}{\sourcesanspro}
 \newcommand*{\bodyfontlight}{\sourcesansprolight}
+
+% \newcommand{cmd}[args]{def}
+\newcommand*{\lvltwo}{\faCircle\,\faCircle\,\faCircleO\,\faCircleO\,\faCircleO}
+\newcommand*{\lvlthree}{\faCircle\,\faCircle\,\faCircle\,\faCircleO\,\faCircleO}
+\newcommand*{\lvlfour}{\faCircle\,\faCircle\,\faCircle\,\faCircle\,\faCircleO}
+\newcommand*{\lvlfive}{\faCircle\,\faCircle\,\faCircle\,\faCircle\,\faCircle}
+
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
