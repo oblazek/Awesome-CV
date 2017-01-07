@@ -91,7 +91,7 @@
 % How the letter is opened
 \letteropening{Dear Mr./Ms.,}
 % How the letter is closed
-\letterclosing{Faithfully,}
+\letterclosing{Sincerely,}
 % Any enclosures with the letter
 \letterenclosure[Attached]{Curriculum Vitae}
 
@@ -100,14 +100,13 @@
 \begin{document}
 
 % Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[R]
+\makecvheader
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Ondřej Blažek~~~·~~~Letter of motivation}
+  {Ondřej Blažek~~~·~~~Cover Letter}
   {}
 
 % Print the title with above letter informations
@@ -119,20 +118,20 @@
 \begin{cvletter}
 
 \lettersection{About Me}
-My name is Ondrej Blazek and I am currently studying Communications and Informatics at the University of Technology Faculty of Electrical Engineering and Communication here in Brno. I am an openminded person with a huge interest in linux/unix systems and SW/Web development.
+My name is Ondrej Blazek and I am currently studying Communications and Informatics at My name is Ondrej Blazek and I am currently studying Communications and Informatics 
+at the University of Technology Faculty of Electrical Engineering and Communication here in Brno. I am an openminded person with a huge interest in linux/unix systems and SW/Web development.
 Currently I am finishing the last year of my Master's programme so I have just started working on my Master thesis, making a software in a C language for DoS attacks. I have also spent one
-semester in Graz, Austria where I was doing a few projects focusing on cryptography and web technologies.
+semester in Graz, Austria where I was focusing on cryptography and web technologies.
 
 \lettersection{Why AT\&T?}
 I have always wanted to work for an international company where I could be part of something big, something perspective and of course AT\&T is a one of them. 
 Your company has a great reputation for being open to new ideas, to be innovative and is known among many people I personally know.
-Opportunities come with challenges, and this could be a really good challenge for me to develop my skills and to get the experiences I need to have to be a good developer.
-%from the best out there. 
+Opportunities come with challenges, and this could be a really good challenge for me to develop my skills and to acquire knowledges from the best. 
 
 
 \lettersection{Why Me?}
 %possibility to develop these skills.
-I think I have a really good background for this course and I honestly think that this would be a perfect place for me where I would finally prove that what I have learned was not for nothing.  
+%I honestly think that where I could benefit from my prove myself
 \end{cvletter}
 
 
