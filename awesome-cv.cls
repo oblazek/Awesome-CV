@@ -182,6 +182,7 @@
 \newcommand*{\bodyfont}{\sourcesanspro}
 \newcommand*{\bodyfontlight}{\sourcesansprolight}
 
+% Shortcuts for skills section
 % \newcommand{cmd}[args]{def}
 \newcommand*{\lvltwo}{\faCircle\,\faCircle\,\faCircleO\,\faCircleO\,\faCircleO}
 \newcommand*{\lvlthree}{\faCircle\,\faCircle\,\faCircle\,\faCircleO\,\faCircleO}
@@ -198,7 +199,7 @@
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
-\newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headersocialstyle}[1]{{\fontsize{7.6pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text} #1}}
@@ -377,11 +378,11 @@
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 \newcommand{\acvHeaderAfterSocialSkip}{6mm}
-\newcommand{\acvHeaderAfterQuoteSkip}{5mm}
+\newcommand{\acvHeaderAfterQuoteSkip}{0mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionTopSkip}{2.5mm}
+\newcommand{\acvSectionContentTopSkip}{3mm}
 
 
 %-------------------------------------------------------------------------------
@@ -408,11 +409,11 @@
   \newcommand*{\drawphoto}{%
     \ifthenelse{\isundefined{\@photo}}{}{%
       \newlength{\photodim}
-      \ifthenelse{\equal{\@photoshape}{circle}}%
-        {\setlength{\photodim}{2cm}}%
-        {\setlength{\photodim}{2cm}}%
+      %\ifthenelse{\equal{\@photoshape}{circle}}%
+      %  {\setlength{\photodim}{2cm}}%
+      %  {\setlength{\photodim}{2cm}}%
       \begin{tikzpicture}%
-          \node[inner sep=0pt] at (0,0) {\includegraphics[width=3cm, height=4cm]{\@photo}};
+          \node[inner sep=0pt] at (0,0) {\includegraphics[scale=0.03]{\@photo}};
           %\node[inner sep=\photodim, fill shrink image=\@photo] () {}; %overzoom draw=\@photoborder, line width=0.3mm, \@photoshape, draw=\@photoborder, inner sep=\photodim, 
       \end{tikzpicture}
     }%
@@ -420,15 +421,17 @@
   \newlength{\headertextwidth}
   \newlength{\headerphotowidth}
   \ifthenelse{\isundefined{\@photo}}{
-    \setlength{\headertextwidth}{\textwidth}
-    \setlength{\headerphotowidth}{0cm}
+    %\setlength{\headertextwidth}{\textwidth}
+    %\setlength{\headerphotowidth}{0cm}
   }{%
     \setlength{\headertextwidth}{0.76\textwidth}
     \setlength{\headerphotowidth}{0.24\textwidth}
-  }%
+  }
+  %
   \begin{minipage}[c]{\headerphotowidth}%
     \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
   \end{minipage}
+  %
   \begin{minipage}[c]{\headertextwidth}
     \ifthenelse{\equal{#1}{R}}{\raggedright}{\ifthenelse{\equal{#1}{L}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
@@ -516,14 +519,15 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \@extrainfo%
         }%
-    } \\[\acvHeaderAfterSocialSkip]%
-    \ifthenelse{\isundefined{\@quote}}%
-      {}%
-      {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
+    }% 
+    %\\[\acvHeaderAfterSocialSkip]%
+    %\ifthenelse{\isundefined{\@quote}}%
+    %  {}%
+    %  {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
   \end{minipage}%
-  \begin{minipage}[c]{\headerphotowidth}%
-    \ifthenelse{\equal{\@photoalign}{right}}{\raggedright\drawphoto}{}
-  \end{minipage}
+  %\begin{minipage}[c]{\headerphotowidth}%
+  %  \ifthenelse{\equal{\@photoalign}{right}}{\raggedright\drawphoto}{}
+  %\end{minipage}
 }
 
 % Define a footer for CV
@@ -541,7 +545,8 @@
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  % horizontal line next to section name
+  \color{gray}\vhrulefill{1pt}
 }
 
 % Define a subsection for CV
@@ -555,17 +560,17 @@
 
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+ %\vspace{\acvSectionContentTopSkip}
+  \vspace{-30mm}
   \paragraphstyle
 }{%
   \par
-  \vspace{2mm}
+  \vspace{20mm}
 }
 
 % Define an environment for cventry
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
+  %\vspace{\acvSectionContentTopSkip}
   \begin{center}
 }{%
   \end{center}
@@ -573,7 +578,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  %\vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -586,34 +591,36 @@
 }
 
 % Define an environment for cvsubentry
-\newenvironment{cvsubentries}{%
-  \begin{center}
-}{%
-  \end{center}
-}
+%\newenvironment{cvsubentries}{%
+%  \begin{center}
+%}{%
+%  \end{center}
+%}
 % Define a subentry of cv information
 % Usage: \cvsubentry{<position>}{<title>}{<date>}{<description>}
-\newcommand*{\cvsubentry}[4]{%
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \setlength\leftskip{0.2cm}
-    \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
-      {\subentrydatestyle{#3}}{}
-    \ifthenelse{\equal{#1}{}}
-      {}
-      {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
-    \ifthenelse{\equal{#4}{}}
-      {}
-      {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
-  \end{tabular*}
-}
+%\newcommand*{\cvsubentry}[4]{%
+%  \setlength\tabcolsep{0pt}
+%  \setlength{\extrarowheight}{0pt}
+%  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+%    \setlength\leftskip{0.2cm}
+%    \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
+%      {\subentrydatestyle{#3}}{}
+%    \ifthenelse{\equal{#1}{}}
+%      {}
+%      {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
+%    \ifthenelse{\equal{#4}{}}
+%      {}
+%      {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
+%% Added vspace here..
+%      \vspace{\acvSectionContentTopSkip}
+%  \end{tabular*}
+%}
+% %\vspace{\acvSectionContentTopSkip}
+  %\vspace{-2mm}
 
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-2mm}
-  \begin{center}
+    \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.0cm} R{2.5cm}} %C{\textwidth} 
@@ -631,7 +638,7 @@
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
+  %\vspace{-2.0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
@@ -656,7 +663,7 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  %\vspace{-4.0mm}
 }
 
 
