@@ -81,6 +81,8 @@
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
+\RequirePackage[czech]{babel}
+
 \RequirePackage[hidelinks]{hyperref}
 \hypersetup{%
   pdftitle={},
